@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://34010493.github.com/atom.xml" rel="self"/>
+  <link href="http://34010493.github.com/"/>
+  <updated>2013-03-18T17:22:14+08:00</updated>
+  <id>http://34010493.github.com/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Clean MySQL bin files]]></title>
+    <link href="http://34010493.github.com/blog/2013/03/18/clean-mysql-bin-files/"/>
+    <updated>2013-03-18T17:04:00+08:00</updated>
+    <id>http://34010493.github.com/blog/2013/03/18/clean-mysql-bin-files</id>
+    <content type="html"><![CDATA[<p>我的开发机用的是SSD硬盘, 由于容量有限, 决定关闭MySQL Bin Log.
+操作方法如下:
+进入MySQL:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  mysql -uroot</span></code></pre></td></tr></table></div></figure>
+
+
+<p>执行:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  reset master</span></code></pre></td></tr></table></div></figure>
+
+
+<p>退出:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  /q</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改/etc/my.cnf, 注释掉:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  #log-bin=mysql-bin
+</span><span class='line'>  #binlog_format=mixed</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重启MySQL</p>
+]]></content>
+  </entry>
+  
+</feed>
